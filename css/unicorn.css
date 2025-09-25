@@ -441,4 +441,17 @@
   .download-btn {
     width: 100%;
   }
+  .dot-hexagon {
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    border: 2px solid #888;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.4s ease;
+    position: relative;
+  }
+}
+.inst{
+  display: flex;
+  justify-content: center;
 }

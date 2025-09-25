@@ -239,7 +239,8 @@
 
 
      <!-- Footer Section Begin -->
-     <footer class="footer" id="kor">
+      <!-- Footer Section Begin -->
+    <footer class="footer" id="kor">
         <div class="container">
             <div class="footer__top">
                 <div class="row">
@@ -259,23 +260,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" >
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
+                    <div class="footer__about" id="popi">
                         <div class="footer__logo">
                             <a href="#"><img src="img/logos.png" alt=""></a>
                         </div>
                         
+                        <p><strong>Send us a Message:</strong> <a href="malito:info@theplatformcapital.com">info@theplatformcapital.com</a></p>
                         
-                        <ul>
-                            <li>Info@platforminvestment.com</li>
-                            <li>+2347034343434</li>
-                        </ul>
+                            <p></p>
+                            
+                        
                         <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://web.facebook.com/ThePlatformCapital/?_rdc=1&_rdr#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://x.com/theplatformcap?s=21" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/theplatformcapital?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/theplatformcapital/?originalSubdomain=ng" target="_blank"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -306,8 +307,8 @@
                         <h6>Get In Touch</h6>
                         
                         <ul>
-                            <li>Info@platformcapital.com</li>
-                            <li>+2348034343434</li>
+                            <li>Info@theplatformcapital.com</li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -333,7 +334,15 @@
         </div>
     </div>
 </footer>
+
+
 <!-- Footer Section End -->
+<!-- Footer Section End -->
+ <img 
+  src="./img/Copy of anime.gif" 
+  id="custom-chat-icon" 
+  style="position: fixed; bottom: 20px; right: 20px; width: 100px; border-radius: 50%; cursor: pointer; z-index: 9999;"
+/>
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -441,7 +450,7 @@
             const form = e.target;
             const data = new FormData(form);
         
-            fetch("https://formsubmit.co/ajax/adediranstephen2000@gmail.com", {
+            fetch("https://formsubmit.co/ajax/info@theplatformcapital.com", {
                 method: "POST",
                 body: data
             })
@@ -463,7 +472,16 @@
         
     
 
-
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const icon = document.getElementById("custom-chat-icon");
+    icon.addEventListener("click", function () {
+      if (window.jivo_api) {
+        jivo_api.open();
+      }
+    });
+  });
+</script>
 
 
 

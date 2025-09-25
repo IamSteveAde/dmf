@@ -259,7 +259,7 @@ body{
         justify-content: center;
        
         padding-top: 50px;
-        padding-bottom: 20px;
+        padding-bottom: 50px;
         padding-left: 5px;
         padding-right: 5px;
         
@@ -268,7 +268,8 @@ body{
       }
     .why-we-are-text p{
       
-      
+   
+     
       font-size: 18px;
       color: #010d24;
       
@@ -888,6 +889,7 @@ body{
       min-width: 1200px;
       padding: 0 60px;
       gap: 1px;
+      width: 100%;
     }
     
     .center-line {
@@ -1066,6 +1068,7 @@ body{
       width: 100%;
       
     }
+   
     #pds{
         margin-top: -30px;
     }
@@ -1117,4 +1120,113 @@ body{
     .imas {
       background-attachment: scroll; /* fallback for mobile */
     }
+  }
+  /* Container */
+.blop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Section Styling */
+.frobnitz-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  gap: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s ease-out forwards;
+}
+
+.frobnitz-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.frobnitz-img img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+.frobnitz-img img:hover {
+  transform: scale(1.03);
+}
+
+.frobnitz-text {
+  flex: 1;
+}
+
+.nargle-sub {
+  color: #9b9b9b;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.zibble-heading {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+.flarn-body {
+  font-size: 1.1rem;
+  color: #4e4e4e;
+  line-height: 1.8;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .frobnitz-section, .frobnitz-section.reverse {
+    flex-direction: column;
+  }
+  .frobnitz-section.reverse {
+    flex-direction: column;
+  }
+  #lopo{
+  height: 100%;
+  width: 100%;
+}
+}
+.frobnitz-img img{
+  height: 400px;
+  width: 400px;
+}
+.pattern-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/img/pattern.webp'); /* Make sure the path is correct */
+  background-repeat: no-repeat;
+  background-size: contain; /* or 'cover' if you want full stretch */
+  z-index: -1;
+  pointer-events: none; /* Prevents it from blocking clicks */
+  background-position: center;
+  opacity: 0.3; /* Makes sure it's subtle behind content */
+}
+.faq-item.open .faq-content {
+    max-height: 500px !important;
+  }
+  .fade-in-title {
+    animation: fadeIn 1s ease forwards;
+  }
+  .fade-in-desc {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }

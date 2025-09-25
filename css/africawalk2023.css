@@ -1431,7 +1431,7 @@ body{
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.612);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
