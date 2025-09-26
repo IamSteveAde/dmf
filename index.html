@@ -27,7 +27,7 @@
     
     <!-- Google Font -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-     
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
@@ -125,28 +125,28 @@
     <div class="dmf-hero-item">
       <div class="dmf-hero-text">
         <h2>Empowering Africa. Inspiring the World.</h2>
-        <a href="#about" class="dmf-btn">Learn More</a>
+        <a href="mailto:info@dozymmobuosifoundation.org" class="dmf-btn">Get Involved</a>
       </div>
     </div>
 
     <div class="dmf-hero-item">
       <div class="dmf-hero-text">
         <h2>Driving change through healthcare, education, and innovation.</h2>
-        <a href="#focus" class="dmf-btn">Our Mission</a>
+        <a href="mailto:info@dozymmobuosifoundation.org" class="dmf-btn">Get Involved</a>
       </div>
     </div>
 
     <div class="dmf-hero-item">
       <div class="dmf-hero-text">
         <h2>Building a healthier, smarter, stronger Africa.</h2>
-        <a href="#impact" class="dmf-btn">See Impact</a>
+        <a href="mailto:info@dozymmobuosifoundation.org" class="dmf-btn">Get Involved</a>
       </div>
     </div>
 
     <div class="dmf-hero-item">
       <div class="dmf-hero-text">
         <h2>From vision to impact, transforming communities together.</h2>
-        <a href="#contact" class="dmf-btn">Get Involved</a>
+        <a href="mailto:info@dozymmobuosifoundation.org" class="dmf-btn">Get Involved</a>
       </div>
     </div>
   </div>
@@ -200,7 +200,7 @@
             <p>
               With a vision rooted in dignity, equity, and innovation, the Foundation believes that every individual deserves the chance to thrive—regardless of background or circumstance.
             </p>
-            <a href="./about.html" class="pulse-btn">Learn More</a>
+            <a href="mailto:info@dozymmobuosifoundation.org" class="pulse-btn">Get Involved</a>
             
           </div>
         </div>
@@ -508,31 +508,47 @@
 
     <!-- RIGHT: Contact form -->
     <div class="dmf-form-card" data-anim>
-      <form id="dmfContactForm" novalidate>
-        <div class="dmf-row">
-          <label class="dmf-label">
-            <input name="name" type="text" placeholder="Your name" required>
-          </label>
-          <label class="dmf-label">
-            <input name="email" type="email" placeholder="Your email" required>
-          </label>
-        </div>
+      <!-- Success message container -->
+<div id="form-status" style="display:none; color: green; margin-top: 10px;">
+  ✅ Thank you! Your message has been sent successfully.
+</div>
 
-        <label class="dmf-label full">
-          <input name="subject" type="text" placeholder="Subject" required>
-        </label>
+<!-- Hidden iframe to handle submission -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-        <label class="dmf-label full">
-          <textarea name="message" placeholder="Your message" required></textarea>
-        </label>
+<!-- Contact Form -->
+<form action="https://formsubmit.co/adediranstephen2000@gmail.com" 
+      method="POST" 
+      target="hidden_iframe" 
+      onsubmit="document.getElementById('form-status').style.display='block'; this.reset();">
 
-        <div class="dmf-actions">
-          <button type="submit" class="dmf-btn-primary">Send Message</button>
-          <button type="button" id="dmfClear" class="dmf-btn-ghost">Clear</button>
-        </div>
+  <input type="hidden" name="_captcha" value="false">
 
-        <p class="dmf-note">We aim to reply within 48 hours.</p>
-      </form>
+  <div class="dmf-row">
+    <label class="dmf-label">
+      <input type="text" name="name" placeholder="Your name" required>
+    </label>
+    <label class="dmf-label">
+      <input type="email" name="email" placeholder="Your email" required>
+    </label>
+  </div>
+
+  <label class="dmf-label full">
+    <input type="text" name="subject" placeholder="Subject" required>
+  </label>
+
+  <label class="dmf-label full">
+    <textarea name="message" placeholder="Your message" required></textarea>
+  </label>
+
+  <div class="dmf-actions">
+    <button type="submit" class="dmf-btn-primary">Send Message</button>
+    <button type="reset" class="dmf-btn-ghost">Clear</button>
+  </div>
+
+  <p class="dmf-note">We aim to reply within 48 hours.</p>
+</form>
+
     </div>
   </div>
 
@@ -557,11 +573,15 @@
         Empowering Africa through healthcare, education, technology, and community development.
       </p>
       <div class="foot-socials">
-        <a href="#" aria-label="Twitter">🐦</a>
-        <a href="#" aria-label="LinkedIn">💼</a>
-        <a href="#" aria-label="Instagram">📸</a>
-        <a href="#" aria-label="YouTube">▶️</a>
-      </div>
+  <a href="https://x.com/DozyMFoundation" target="_blank" aria-label="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+ 
+  <a href="https://www.instagram.com/thedozymmobuosi/?hl=en" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+</div>
     </div>
 
     <!-- Column: Quick links -->
@@ -591,10 +611,28 @@
     <!-- Column: Newsletter -->
     <div class="foot-cell foot-delta">
       <h4 class="foot-title">Stay Updated</h4>
-      <form class="foot-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">→</button>
-      </form>
+      <!-- Success message -->
+<div id="foot-status" style="display:none; color: #0a0; margin-top: 8px; font-size: 0.9rem;">
+  ✅ Subscribed successfully!
+</div>
+
+<!-- Hidden iframe -->
+<iframe name="foot_hidden_iframe" style="display:none;"></iframe>
+
+<!-- Footer Form -->
+<form class="foot-form" 
+      action="https://formsubmit.co/adediranstephen2000@gmail.com" 
+      method="POST" 
+      target="foot_hidden_iframe" 
+      onsubmit="document.getElementById('foot-status').style.display='block'; this.reset();">
+
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Subscription Request">
+
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <button type="submit">→</button>
+</form>
+
       <p class="foot-note">Join our newsletter for news & impact stories.</p>
     </div>
   </div>

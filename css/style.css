@@ -6365,6 +6365,13 @@ h2 {
   height: 30px;
   width: auto;
 }
+.founder-section {
+  padding: 10px 20px;
+  
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
 .dmf-hero-text h2{
 	font-size: 2rem;
 }
