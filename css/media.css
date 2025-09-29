@@ -1,0 +1,135 @@
+.xx_mediaSection {
+  padding: 4rem 8%;
+  background: #fff;
+}
+
+.xx_mediaHeader {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #222;
+  text-align: center;
+}
+
+.xx_tabNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.xx_tabBtn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.xx_tabBtn.active {
+  background: #ff5f6d;;
+  color: #fff;
+}
+
+.xx_tabContentWrapper {
+  position: relative;
+}
+
+.xx_tabContent {
+  display: none;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.xx_tabContent.active {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.xx_pressItem {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.xx_pressTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #222;
+  padding-top: 30px;
+}
+
+.xx_pressDate {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.6rem;
+}
+
+.xx_pressDesc {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.xx_pressLink {
+  font-size: 0.9rem;
+  color: #d62b70;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.xx_eventCard {
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.xx_eventImg {
+  width: 80%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.xx_eventTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem;
+  color: #222;
+}
+
+.xx_eventDesc {
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+.xx_eventLink {
+  margin: 0 1rem 1.2rem;
+  font-size: 0.9rem;
+  color: #d62b70;
+  text-decoration: none;
+}
+
+.xx_galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.xx_galleryItem {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -602,5 +602,22 @@ function openModal(content) {
 function closeModal() {
   document.getElementById('modal').style.display = "none";
 }
+// Intersection Observer for fade-in effect
+const sections = document.querySelectorAll(".weird-section");
+const tabs = document.querySelectorAll(".weird-tab");
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const id = entry.target.getAttribute("id");
+    const relatedTab = document.querySelector(`.weird-tab[data-target="${id}"]`);
 
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      relatedTab.classList.add("active");
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach((section) => observer.observe(section));

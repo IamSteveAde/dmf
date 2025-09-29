@@ -1,0 +1,177 @@
+ :root{
+      --accent:#f23006;
+      --muted:#9aa4b2;
+      --text:#111318;
+      --bg:#fbfcfd;
+      --panel:#ffffff;
+      --max-width:1180px;
+    }
+
+ 
+
+    .zyx_shell_q1{
+      max-width:var(--max-width);
+      margin:48px auto;
+      padding:48px 28px;
+      box-sizing:border-box;
+    }
+
+    .zyx_inner_q1{
+      display:flex;
+      gap:56px;
+      align-items:flex-start;
+    }
+
+    /* ============== Timeline (left) ============== */
+    .zyx_timeline_col_q1{
+      width:220px;
+      position:relative;
+      flex:0 0 220px;
+      display:flex;
+      justify-content:flex-start;
+      align-items:flex-start;
+      padding-top:6px;
+    }
+
+    /* base faint line */
+    .zyx_base_line_q1{
+      position:absolute;
+      left:18px;
+      top:10px;
+      bottom:10px;
+      width:3px;
+      background:linear-gradient(#e6e9ec,#e6e9ec);
+      border-radius:2px;
+      z-index:0;
+      opacity:1;
+    }
+
+    /* progress fill sits above base */
+    .zyx_progress_q1{
+      position:absolute;
+      left:18px;
+      top:10px;
+      width:3px;
+      height:0%;
+      background: linear-gradient(180deg,var(--accent), #ff8a6b);
+      border-radius:2px;
+      z-index:1;
+      transition: height 200ms linear;
+      box-shadow:0 6px 18px rgba(242,48,6,0.06);
+    }
+
+    .zyx_tabslist_q1{
+      position:relative;
+      z-index:2;
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:32px;
+      height: 200vh;
+      top: 50px;
+    }
+
+    .zyx_tab_q1{
+      position:relative;
+      cursor:pointer;
+      padding-left:42px;
+      color:var(--muted);
+      font-family:'GothamMedium', system-ui, sans-serif;
+      font-size:15px;
+      letter-spacing:0.1px;
+      transition: all 280ms cubic-bezier(.2,.9,.2,1);
+      user-select:none;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-height:28px;
+      padding-bottom: 200px;
+    }
+
+    /* dot for each tab */
+    .zyx_tab_q1::before{
+      content:'';
+      position:absolute;
+      left:6px;
+      
+      transform:translateY(-50%);
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:#f2f4f6;
+      border:2px solid #d6dbe0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.03);
+      transition: all 320ms ease;
+      z-index:3;
+      
+    }
+
+    /* active tab style */
+    .zyx_tab_q1.zyx_active_tab_q1{
+      color:var(--accent);
+      transform:scale(1.06);
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:0.2px;
+    }
+
+    .zyx_tab_q1.zyx_active_tab_q1::before{
+      background:var(--accent);
+      border-color:rgba(242,48,6,0.95);
+      box-shadow:0 6px 18px rgba(242,48,6,0.14);
+      transform:translateY(-50%) scale(1.05);
+    }
+
+    /* ============== Content (right) ============== */
+    .zyx_content_col_q1{
+      flex:1;
+      min-width:320px;
+    }
+
+    .zyx_section_q1{
+      background:transparent;
+      padding:36px 0;
+      margin:0;
+      opacity:0;
+      transform:translateY(28px);
+      transition: opacity 680ms cubic-bezier(.2,.9,.2,1), transform 680ms cubic-bezier(.2,.9,.2,1);
+      will-change:opacity, transform;
+    }
+
+    .zyx_section_q1.zyx_visible_q1{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .zyx_section_q1 h2{
+      font-family:'GothamMedium', system-ui, sans-serif;
+      font-size:28px;
+      margin:0 0 12px 0;
+      color:#0f1720;
+    }
+
+    .zyx_section_q1 p{
+      margin:0;
+      max-width:760px;
+      color:#3c4852;
+      font-size:16.5px;
+      line-height:1.75;
+    }
+
+    /* subtle separator between sections for breathing */
+    .zyx_section_sep_q1{
+      height:36px;
+    }
+
+    /* responsiveness */
+    @media (max-width:980px){
+      .zyx_inner_q1{flex-direction:column;}
+      .zyx_timeline_col_q1{width:100%; order:2; display:flex; justify-content:center; margin-top:12px;}
+      .zyx_tabslist_q1{flex-direction:row; gap:20px; overflow:auto; padding:8px 6px;}
+      .zyx_tab_q1{padding-left:22px; font-size:14px;}
+      .zyx_base_line_q1, .zyx_progress_q1 {display:none;}
+      .zyx_content_col_q1{order:1;}
+    }
+    
