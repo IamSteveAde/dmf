@@ -243,9 +243,12 @@
 /* Mobile version */
 @media (max-width: 768px) {
   .mom {
-    height: 300px; /* reduce height for mobile */
+    height: auto; /* reduce height for mobile */
     margin-bottom: 15px; /* slightly smaller spacing */
     box-shadow: 0 4px 12px rgba(242, 48, 6, 0.1); /* lighter shadow */
     border-radius: 15px; /* slightly smaller radius */
+  }
+  .zyx_content_col_q1{
+    margin-top: -90px;
   }
 }
