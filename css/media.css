@@ -40,6 +40,9 @@
 .xx_tabContent {
   display: none;
   animation: fadeIn 0.6s ease forwards;
+  justify-self: center;
+  text-align: center;
+  align-items: center;
 }
 
 .xx_tabContent.active {
@@ -48,7 +51,10 @@
 }
 
 .xx_pressItem {
-  
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -79,6 +85,9 @@
   text-decoration: none;
   font-weight: 500;
 }
+.xx_pressLink :hover{
+    color: #d62b70;
+}
 
 .xx_eventCard {
   display: flex;
@@ -89,13 +98,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.xx_eventImg {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.20);
-}
 
 .xx_eventTitle {
   font-size: 1.1rem;
@@ -143,5 +145,67 @@
     .xx_tabBtn{
         font-size: 10px;
     }
+    .xx_eventImg {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+  object-position: center; 
+  justify-self: center;
+}
+.xx_eventImgs {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+  object-position: top; 
+}
 
+}
+.xx_galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row for desktop */
+  gap: 15px; /* space between images */
+}
+
+.xx_galleryItem {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.xx_galleryItem:hover {
+  transform: scale(1.05); /* optional hover zoom effect */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .xx_galleryGrid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+
+  .xx_galleryItem {
+    height: 200px; /* slightly smaller for mobile */
+  }
+}
+.xx_eventImg {
+  display: block;             /* makes margin auto work */
+  margin: 40px auto;          /* center horizontally with spacing */
+  width: 80%;                 /* perfect desktop size */
+  max-width: 900px;           /* prevents it from getting too large */
+  height: auto;               /* maintain aspect ratio */
+  object-fit: cover;          /* covers the area nicely */
+  object-position: center bottom; /* focus on important part */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.xx_eventImg:hover {
+  transform: scale(1.03); /* subtle zoom on hover */
 }
