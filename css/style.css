@@ -7565,6 +7565,7 @@ h2 {
   align-items: center;
   font-weight: 600;
   transition: background 0.3s ease;
+  color: #000;
 }
 
 .snazz-question:hover {
