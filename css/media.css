@@ -90,9 +90,11 @@
 }
 
 .xx_eventImg {
-  width: 80%;
+  width: 100%;
   height: 300px;
   object-fit: cover;
+  border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.20);
 }
 
 .xx_eventTitle {
@@ -132,4 +134,14 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .xx_tabBtn{
+        font-size: 10px;
+    }
+
 }

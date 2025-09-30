@@ -99,3 +99,62 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .zz_focusGrid {
+    grid-template-areas: 
+      "left"
+      "rightTop"
+      "rightBottom"
+      "full";
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem;
+  }
+
+  .zz_bannerImgs {
+    height: 60vh; /* reduce height from 100vh for tablets */
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .zz_focusWrapper {
+    padding: 2rem 1rem;
+  }
+
+  .zz_focusGrid {
+    display: block; /* fallback simple stack */
+  }
+
+  .zz_box {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .zz_bannerImg {
+    height: 180px;
+  }
+
+  .zz_bannerImgs {
+    height: 45vh; /* more compact hero image for phones */
+  }
+
+  .zz_title {
+    font-size: 1.2rem;
+  }
+
+  .zz_short {
+    font-size: 0.95rem;
+  }
+
+  .zz_detail {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .zz_btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
