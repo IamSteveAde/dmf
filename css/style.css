@@ -7459,6 +7459,7 @@ h2 {
     box-shadow: 0 4px 12px rgba(242, 48, 6, 0.1); /* lighter shadow */
     border-radius: 15px; /* slightly smaller radius */
   }
+  
 }
 @media (max-width: 768px) {
   /* Collapse into single column */
@@ -7466,6 +7467,7 @@ h2 {
     flex-direction: column;
     gap: 24px;
   }
+  
  
 
   /* Hide vertical timeline parts */
@@ -7510,4 +7512,91 @@ h2 {
   .zyx_timeline_col_q1{
     display: none;
   }
+ 
+}
+/* Container */
+#quark-fizzle {
+  padding: 60px 20px;
+ 
+  overflow-x: hidden;
+
+}
+
+.glorp-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Title */
+.blip-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.blop-sub {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* FAQ Item */
+.snazz-item {
+  border-left: 4px solid #ff6347; /* tomato-ish left border */
+  margin-bottom: 15px;
+  background: rgba(255, 99, 71, 0.05); /* transparent tomato background */
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* FAQ Question */
+.snazz-question {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.snazz-question:hover {
+  background: rgba(255, 99, 71, 0.1);
+}
+
+/* Toggle symbol */
+.snazz-toggle {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* FAQ Answer */
+.snazz-answer {
+  max-height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-size: 1rem;
+  color: #333;
+}
+.snazz-answer p{
+	color: #000;
+}
+
+/* Open state */
+.snazz-item.open .snazz-answer {
+  max-height: 500px;
+  padding: 15px 20px 20px 20px;
+}
+
+.snazz-item.open .snazz-toggle {
+  transform: rotate(45deg);
+  content: '✖';
 }
