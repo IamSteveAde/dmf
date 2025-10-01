@@ -64,7 +64,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
-  color: #222;
+  color: tomato;
   padding-top: 30px;
 }
 
@@ -103,9 +103,11 @@
   font-size: 1.1rem;
   font-weight: 600;
   margin: 1rem;
-  color: #222;
+  color: tomato;
 }
-
+.xx_eventTitle, xx_pressItem{
+    color: tomato;
+}
 .xx_eventDesc {
   margin: 0 1rem 1rem;
   color: #555;

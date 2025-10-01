@@ -167,26 +167,32 @@
       <p class="zz_infoItem">📧 <a href="mailto:info@dozymmobuosifoundation.org">info@dozymmobuosifoundation.org</a></p>
 
       <div class="zz_socials">
-        <a href="#" aria-label="Twitter" class="zz_socialIcon">🐦</a>
-        <a href="#" aria-label="LinkedIn" class="zz_socialIcon">💼</a>
-        <a href="#" aria-label="Instagram" class="zz_socialIcon">📸</a>
-        <a href="#" aria-label="YouTube" class="zz_socialIcon">▶️</a>
+                <a href="https://x.com/DozyMFoundation" class="zz_socialIcon" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="https://www.instagram.com/thedozymmobuosi/?hl=en" class="zz_socialIcon" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
       </div>
     </div>
 
     <!-- Right: Contact Form -->
-    <form class="zz_contactForm">
-      <div class="zz_formGroup">
-        <input type="text" placeholder="Your Name" required>
-      </div>
-      <div class="zz_formGroup">
-        <input type="email" placeholder="Your Email" required>
-      </div>
-      <div class="zz_formGroup">
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="dmf-btn">Send Message</button>
-    </form>
+    <form class="zz_contactForm" id="contactForm" action="https://formsubmit.co/ajax/adediranstephen2000@gmail.com" method="POST">
+  <div class="zz_formGroup">
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
+  <div class="zz_formGroup">
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
+  <div class="zz_formGroup">
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="dmf-btn">Send Message</button>
+</form>
+<div id="formResponse"></div>
+
   </div>
 </section>
 
@@ -217,12 +223,11 @@
     <div class="foot-cell foot-beta">
       <h4 class="foot-title">Explore</h4>
       <ul class="foot-list">
-        <li class="active"><a href="./index.html">Home</a></li>
-        <li><a href="./#abt-cradle">About Us</a></li>
-        <li><a href="./#focus">Focus Areas</a></li>
-        <li><a href="./#impact">Our Impact</a></li>
-        
-        <li><a href="./#contact">Contact</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./focus.html">Focus Areas</a></li>
+       <li><a href="./media.html">Media</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
     </div>
 
@@ -916,6 +921,31 @@ counters.forEach(counter => {
     this.reset();
   });
 </script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch(this.action, {
+    method: "POST",
+    body: new FormData(this),
+    headers: { "Accept": "application/json" }
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("formResponse").innerHTML = "<p style='color:green;'>Message sent successfully!</p>";
+      this.reset();
+    } else {
+      return response.json().then(data => {
+        document.getElementById("formResponse").innerHTML = "<p style='color:red;'>Error: " + (data.message || "Something went wrong") + "</p>";
+      });
+    }
+  })
+  .catch(error => {
+    document.getElementById("formResponse").innerHTML = "<p style='color:red;'>Failed to send. Try again later.</p>";
+  });
+});
+</script>
+
 
 
 </body>
