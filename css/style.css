@@ -6537,7 +6537,7 @@ h2 {
 .dmf-dot.active {
   background: white;
   transform: scale(1.2);
-   background: #ffcb05;
+   background: #000;
 }
 
 .dmf-hero-section::before {
