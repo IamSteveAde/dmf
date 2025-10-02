@@ -460,6 +460,78 @@
     </div>
   </div>
 </section>
+
+<section class="trst_wrpr" aria-labelledby="trst_heading">
+  <!-- Heading -->
+  <div class="trst_heading" id="trst_heading">
+    <h2 class="trst_title">Board of Trustees</h2>
+    <p class="trst_desc">
+      Meet the distinguished leaders guiding our vision and impact. Each trustee brings unmatched expertise,
+      dedication, and passion for driving meaningful change.
+    </p>
+  </div>
+
+  <!-- Cards row -->
+  <div class="trst_cards" role="list">
+    <article class="trst_card" role="listitem" data-linkedin="#" aria-labelledby="name-tosin">
+      <div class="trst_imgwrap">
+        <img src="./img/Tosin.jpg" alt="Oluwatosin Mmobuosi" class="trst_img">
+      </div>
+      <h3 id="name-tosin" class="trst_name">Oluwatosin Mmobuosi</h3>
+      <p class="trst_role">Co-Chair, Dozy Mmobuosi Foundation</p>
+      <button type="button" class="trst_btn" data-target="tosin">Explore Bio</button>
+
+      <!-- hidden bio (read by JS) -->
+      <div class="trst_hidden" aria-hidden="true" style="display:none;">
+        <p>Oluwatosin Mmobuosi is a passionate entrepreneur and philanthropist with a strong commitment to Africa’s growth and development. She plays an active role in advancing the mission of the Dozy Mmobuosi Foundation, carrying out impactful work on behalf of her family to improve lives across the continent.</p>
+        <p>With a career spanning creative directing, music, and media, Tosin brings a unique blend of artistic vision and business acumen to every endeavor. Her background in the creative industries has shaped her ability to tell stories, build platforms, and create meaningful projects that resonate with communities both locally and globally.</p>
+        <p>Educated at London Metropolitan University, Tosin combines international exposure with a deep dedication to African development. Through her work, she continues to champion initiatives that promote empowerment, education, healthcare, and opportunities for underserved populations.</p>
+        <p>A dynamic leader and visionary, Tosin Mmobuosi exemplifies the spirit of entrepreneurship and philanthropy, driving positive change across Africa and beyond.</p>
+      </div>
+    </article>
+
+    <article class="trst_card" role="listitem" data-linkedin="#" aria-labelledby="name-ebuwa">
+      <div class="trst_imgwrap">
+        <img src="./img/Martins.jpg" alt="Ebuwa Martins Agbonwaneten" class="trst_img">
+      </div>
+      <h3 id="name-ebuwa" class="trst_name">Ebuwa Martins Agbonwaneten</h3>
+      <p class="trst_role">Trustee</p>
+      <button type="button" class="trst_btn" data-target="ebuwa">Explore Bio</button>
+
+      <!-- hidden bio (read by JS) -->
+      <div class="trst_hidden" aria-hidden="true" style="display:none;">
+        <p>Ebuwa Martins Agbonwaneten, a prominent Nigerian business executive, boasts over 20 years of trailblazing experience in brand development, FCMG, Healthcare, media and communications, and corporate entertainment. He attended the esteemed University of Benin and The Pencils Film & Television Institute. From the Executive Director of Legendary Gold Ltd, Ebuwa’s visionary expertise has made an indelible mark. His influence extends internationally through co-producing The Nigeria Fashion Show, The Nigeria Fashion Week, The Nigeria Entertainment Awards, and The Nigeria Model Awards.</p>
+        <p>His profound dedication is exemplified through pivotal roles in Customer Relationship Management, as a dynamic business development expert, and as an esteemed Executive Director. Ebuwa’s leadership as Chief Executive Officer at White Martinz Production Limited, Country Director for Soundcity TV Ghana, and General Manager of Ovation TV has been transformative. Additionally, Ebuwa has successfully served as General Manager for Sellmedia Group (Event4Brands) and as a managing partner at Incentive Media Limited.</p>
+        <p>Today, he is one of the Board Members of Equity Specialist Hospital and Diagnostic Centre. Ebuwa drives impactful initiatives, leaving a legacy of visionary leadership. He is currently heading Tingo Bv.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Single reusable modal (populated dynamically) -->
+  <div class="trst_modal" role="dialog" aria-modal="true" aria-hidden="true" id="trst_modal">
+    <div class="trst_modal_overlay" id="trst_modal_overlay" tabindex="-1"></div>
+
+    <div class="trst_modal_content" role="document" aria-labelledby="modal_name" aria-describedby="modal_bio">
+      <button class="trst_modal_close" id="trst_modal_close" aria-label="Close">&times;</button>
+
+      <div class="trst_modal_left">
+        <img src="" alt="" class="trst_modal_img" id="modal_img">
+      </div>
+
+      <div class="trst_modal_right">
+        <h3 id="modal_name" class="trst_modal_name">Name</h3>
+        <p class="trst_modal_role" id="modal_role">Role</p>
+        <a class="trst_modal_link" id="modal_link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.604 4.05 5.5 2.99 5.5 1.93 5.5 1 4.604 1 3.5 1 2.396 1.93 1.5 2.99 1.5 4.05 1.5 4.98 2.396 4.98 3.5zM.5 8.99h4.98V24H.5V8.99zM9.5 8.99h4.78v2.05h.07c.67-1.25 2.3-2.56 4.74-2.56 5.07 0 6 3.35 6 7.7V24h-4.98v-6.77c0-1.62 0-3.69-2.25-3.69-2.25 0-2.6 1.75-2.6 3.57V24H9.5V8.99z"/></svg>
+        </a>
+
+        <div class="trst_modal_bio" id="modal_bio" tabindex="0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     <section class="cosmic-video-zone" >
   <div class="stellar-video-wrapper">
     <div class="stellar-video-frame" data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1200">
@@ -1387,7 +1459,101 @@ document.querySelectorAll('.snazz-question').forEach(btn => {
 });
 </script>
 
+<script>
+  (function () {
+    const root = document.querySelector('.trst_wrpr');
+    if (!root) return;
 
+    const modal = root.querySelector('#trst_modal');
+    const modalOverlay = modal.querySelector('#trst_modal_overlay');
+    const modalClose = modal.querySelector('#trst_modal_close');
+    const modalImg = modal.querySelector('#modal_img');
+    const modalName = modal.querySelector('#modal_name');
+    const modalRole = modal.querySelector('#modal_role');
+    const modalBio = modal.querySelector('#modal_bio');
+    const modalLink = modal.querySelector('#modal_link');
+
+    let lastFocused = null;
+
+    // attach handlers to all buttons
+    root.querySelectorAll('.trst_btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.trst_card');
+        if (!card) return;
+
+        // get values from DOM
+        const imgEl = card.querySelector('.trst_img');
+        const name = card.querySelector('.trst_name')?.textContent?.trim() || '';
+        const role = card.querySelector('.trst_role')?.textContent?.trim() || '';
+        const hidden = card.querySelector('.trst_hidden');
+        const bio = hidden ? hidden.innerText.trim() : '';
+        const linkedin = card.dataset.linkedin || '#';
+
+        // populate modal
+        modalImg.src = imgEl ? imgEl.src : '';
+        modalImg.alt = name;
+        modalName.textContent = name;
+        modalRole.textContent = role;
+        modalBio.textContent = bio;
+        modalLink.href = linkedin;
+
+        // open
+        openModal();
+      });
+    });
+
+    function openModal() {
+      lastFocused = document.activeElement;
+      modal.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.body.style.overflow = 'hidden';
+      // ensure visible
+      modal.classList.add('is-open');
+      // focus close button
+      modalClose.focus();
+      document.addEventListener('keydown', onKeyDown);
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      modal.classList.remove('is-open');
+      document.removeEventListener('keydown', onKeyDown);
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function onKeyDown(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      // simple focus trap: keep focus inside modal
+      if (e.key === 'Tab') {
+        const focusable = modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+    // clicking outside content (on overlay) closes the modal; clicking inside modal_content won't
+    modal.addEventListener('click', (ev) => {
+      if (ev.target === modal) closeModal();
+    });
+
+    // expose for debugging if needed
+    window.trstModal = { open: openModal, close: closeModal };
+  })();
+</script>
 
 
 </body>
