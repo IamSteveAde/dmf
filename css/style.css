@@ -4842,7 +4842,7 @@ h2 {
   display: inline-block;
   padding: 14px 36px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #f23006, #fff);
+  background: linear-gradient(135deg, #000, #fff);
   color: #2e2e2e;
   font-size: 1rem;
   border: none;
@@ -4869,11 +4869,13 @@ h2 {
 
 .dmf-btn:hover::before {
   left: 100%;
+  color: white;
 }
 
 .dmf-btn:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  color: white;
 }
 
 /* Progress Bar */
@@ -5241,7 +5243,7 @@ h2 {
 }
 .founder-section {
   padding: 100px 20px;
-   background-color: #ff5f6c0f;
+   background-color: #f3f3f3;
   display: flex;
   justify-content: center;
   overflow-x: hidden;
@@ -5628,7 +5630,7 @@ h2 {
 
 /* Info column */
 .dmf-info{
- background: linear-gradient(160deg, #0a1a2f, #132a44); /* Elegant deep tones */
+ background: linear-gradient(160deg, #000000, #1b1b1b); /* Elegant deep tones */
   padding: 34px;
   border-radius: var(--radius);
   box-shadow: 0 10px 30px rgba(2,6,23,0.06);
@@ -5637,7 +5639,7 @@ h2 {
   font-size: 28px;
   margin: 0 0 6px;
   font-weight: 800;
-  color: var(--brand);
+  color: #fff;
 }
 .dmf-lead{
   margin: 0 0 18px;
@@ -5653,7 +5655,7 @@ h2 {
 .dmf-extra{ margin-top: 10px; display:flex; flex-direction:column; gap:12px; }
 .dmf-cta{
   display:inline-block;
-  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  background: linear-gradient(135deg, black, white);
   color:#fff;
   padding:10px 18px;
   border-radius: 10px;
@@ -5663,7 +5665,7 @@ h2 {
   transition: transform .18s ease, box-shadow .18s ease;
   width: fit-content;
 }
-.dmf-cta:hover{ transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,0.18); }
+.dmf-cta:hover{ transform: translateY(-3px); color: white; box-shadow: 0 14px 34px rgba(0,0,0,0.18); }
 
 /* Form card */
 .dmf-form-card{
@@ -5707,7 +5709,7 @@ h2 {
 /* Buttons */
 .dmf-actions{ display:flex; gap:12px; align-items:center; }
 .dmf-btn-primary{
-  background: linear-gradient(135deg,var(--brand),var(--brand-dark));
+  background: linear-gradient(135deg,black,white);
   color:#fff;
   border:none;
   padding:12px 18px;
@@ -6218,7 +6220,7 @@ h2 {
 .stellar-caption h2 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--brand-main);
+  color: #fff;
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -6229,7 +6231,7 @@ h2 {
   display: block;
   width: 100%;
   height: 4px;
-  background: var(--brand-main);
+  background: white;
   margin-top: 6px;
   border-radius: 2px;
   transform: scaleX(0);
@@ -6509,7 +6511,7 @@ h2 {
 }
 
 .dmf-btn:hover {
-  background-color: #f23006;
+  background-color: #black;
 }
 
 .dmf-slider-dots {
@@ -6665,7 +6667,7 @@ h2 {
 
 .zmf-main-container {
   width: 90%;
-  background-color: #ff5f6c0f;
+  background-color: #f3f3f3;
   
   border-radius: 20px;
   padding: 40px;
@@ -6717,7 +6719,7 @@ h2 {
   font-family: 'GothamMedium', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 8px;
-  color: var(--brand-main);
+  color: #000;
 }
 
 .zmf-subtitle {
@@ -6767,7 +6769,7 @@ h2 {
   width: 90%;
   border-radius: 20px;
   padding: 40px;
-   background-color: #ff5f6c0f;
+   background-color: #f3f3f3;
   box-shadow: 0 10px 30px rgba(0,0,0,0.20);
   display: flex;
   flex-direction: column;
@@ -6859,7 +6861,7 @@ h2 {
 .dmf-faq-container {
   width: 90%;
   max-width: 900px;
-   background-color: #ff5f6c0f;
+   background-color: #f3f3f3;
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.20);
@@ -7439,7 +7441,7 @@ h2 {
 .stat-counter {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ff6b00;
+  color: #000;
   margin-bottom: 10px;
 }
 
